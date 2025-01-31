@@ -14,7 +14,7 @@ export default function FeaturedMovie({
     name,
     category,
     thumbnail,
-    rating = 0
+    rating = 0,
 }) {
     return (
         <div class="absolute overflow-hidden group mr-[30px]">
@@ -34,8 +34,8 @@ export default function FeaturedMovie({
             </div>
             {/* <!-- bottom detail --> */}
             <div
-                class="absolute bottom-0 h-[100px] left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px]
-        rounded-br-[28px] flex justify-between items-center px-7 h-[130px]"
+                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px]
+        rounded-br-[28px] flex justify-between items-center px-7 h-[100px]"
             >
                 <div>
                     <div class="font-medium text-[22px] text-white">{name}</div>
