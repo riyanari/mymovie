@@ -44,8 +44,8 @@ export default function FeaturedMovie({
                 <div class="translate-x-[100px] group-hover:translate-x-0 transition ease-in-out duration-500">
                     <img src="/icons/ic_play.svg" width="50" alt="" />
                 </div>
-            </div>
-            <a href={slug} class="inset-0 absolute z-50"></a>
+            </div> 
+            <Link href={route('prototype.movie.show', slug)} class="inset-0 absolute z-50"></Link>
         </div>
     );
 }
