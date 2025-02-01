@@ -7,7 +7,7 @@ const TextInput = forwardRef(
             type = "text",
             name,
             value,
-            defaultValue,
+            // defaultValue = "",
             className = "",
             variant = "primary",
             autoComplete,
@@ -20,11 +20,11 @@ const TextInput = forwardRef(
         },
         ref
     ) {
-        const input = ref || useRef();
+        const inputRef = ref || useRef();
 
         useEffect(() => {
-            if (isFocused && input.current) {
-                input.current.focus();
+            if (isFocused && inputRef.current) {
+                inputRef.current.focus();
             }
         }, [isFocused]);
 
@@ -35,10 +35,9 @@ const TextInput = forwardRef(
                     type={type}
                     name={name}
                     value={value}
-                    defaultValue={defaultValue}
+                    // defaultValue={defaultValue}
                     className={`rounded-2xl bg-form-bg py-[13px] px-7 w-full input-${variant} ${isError ? "input-error" : ""} ${className}`}
-                    // className={`rounded-2xl bg-form-bg py-[13px] px-7 w-full focus:outline-alerange focus:outline-none`}
-                    ref={input}
+                    ref={inputRef}
                     autoComplete={autoComplete}
                     required={required}
                     onChange={(e) => handleChange && handleChange(e)}
@@ -53,7 +52,7 @@ TextInput.propTypes = {
     type: PropTypes.oneOf(["text", "email", "password", "number", "file"]),
     name: PropTypes.string,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    // defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     className: PropTypes.string,
     variant: PropTypes.oneOf(["primary", "error", "primary-outline"]),
     autoComplete: PropTypes.string,
