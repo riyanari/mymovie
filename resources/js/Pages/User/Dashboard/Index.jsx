@@ -56,7 +56,7 @@ export default function Dashboard({auth, featuredMovies, movies}) {
                             key={movie.id}
                             slug={movie.slug}
                             name={movie.name}
-                            category= 
+                            category= {movie.category}
                             thumbnail={movie.thumbnail}
                         />
                     ))}
